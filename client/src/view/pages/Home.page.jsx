@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { getNews } from '../../state/slices/news.slice';
 import { useDispatch, useSelector } from "react-redux";
+import Article from '../Article.view';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -12,10 +13,12 @@ const Home = () => {
       <Title>ABC News</Title>
 
       {(news.length === 0) ?
-        (
-          <Button onClick={() => dispatch(getNews())}>Load</Button>
-        ) : (<p>there are news</p>)
+        (<Button onClick={() => dispatch(getNews())}>Load</Button>) : null
       }
+
+      {news?.map(article => (
+        <Article article={article} />
+      ))}
     </Main>
   );
 };
@@ -29,6 +32,7 @@ const Main = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: mintcream;
 `;
 
 const Title = styled.h1`
