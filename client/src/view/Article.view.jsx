@@ -11,7 +11,7 @@ const Article = ({ article }) => {
         <div> {article.publishedAt?.substring(0, 10)} {article.publishedAt?.substring(11, 16)}</div>
       </Details>
       <Content>{article.content}</Content>
-      <a href={article.url} target="_blank" >full article</a>
+      <a href={article.url} target="_blank" >Full article...</a>
     </Main>
   );
 };
@@ -26,7 +26,17 @@ const Main = styled.main`
   align-items: center;
   border: 1px solid midnightblue;
   margin: 1rem;
-  background-color: #def196;
+  background-color: #9bdef3;
+  border-top-right-radius: 10rem;
+  border-bottom-right-radius: 15rem;
+  border-top-left-radius: 15rem;
+  border-bottom-left-radius: 10rem;
+   
+   a {
+     color: whitesmoke;
+     padding-top: 2rem;
+     text-decoration: underline;
+   }
 `;
 
 const Title = styled.h1`
@@ -34,12 +44,16 @@ const Title = styled.h1`
   line-height: 1.15;
   font-size: 3rem;
   text-align: center;
+  color: midnightblue;
+  font-weight: bold;
 `;
+
 const Description = styled.p`
   line-height: 2;
   text-align: center;
   font-size: 1.6rem;
   font-family: cursive;
+  color: white
 `;
 
 const Details = styled.div`
@@ -54,5 +68,5 @@ const Details = styled.div`
 const Content = styled.p`
   line-height: 2;
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.9rem;
 `;

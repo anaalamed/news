@@ -32,10 +32,10 @@ const Main = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: mintcream;
 `;
 
 const Title = styled.h1`
+  margin-top: 2rem;
   margin-bottom: 1rem;
   line-height: 1.15;
   font-size: 4rem;

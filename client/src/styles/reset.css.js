@@ -13,10 +13,19 @@ export const GlobalStyles = createGlobalStyle`
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    background-image: url("night.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center top;
+    color: midnightblue;
   }
 
   a {
     text-decoration: none;
     cursor: pointer;
+    color: midnightblue;
+    font-weight: bold;
   }
 `;

@@ -16,18 +16,39 @@ export const getNews = createAsyncThunk(
 	}
 );
 
+export const getStorage = createAsyncThunk(
+	'news/getStorage',
+	async (payload) => {
+		const response = await fetch('http://localhost:7000/api/news/count', {
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		});
+    if (response.ok) {
+      const storage = await response.json();
+      console.log(storage);
+      return {storage};
+		}
+	}
+);
+
+
 const news_slice = createSlice({
   name: "news",
   initialState: {
     news: [],
     is_loading: false,
-    error_msg: ""
+    error_msg: "",
+    storage: []
   },
   reducers: {},
   extraReducers: {
     // --------------- other Async -----------------------
     [getNews.fulfilled]: (state, action) => {
       state.news = action.payload.news;
+    },
+    [getStorage.fulfilled]: (state, action) => {
+      state.storage = action.payload.storage;
     }
   }
 });

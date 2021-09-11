@@ -6,9 +6,11 @@ const TopBar = () => {
   return (
     <Header>
       <SLink to="/">
-        <Logo src="logo-t.png" alt="Tovana logo" />
+        {/* <Logo src="logo-t.png" alt="Tovana logo" /> */}
       </SLink>
       <SLink to="/">Home</SLink>
+      <SLink to="/cloud">Word Cloud</SLink>
+
     </Header>
   );
 };
@@ -16,7 +18,6 @@ export default TopBar;
 
 const Header = styled.header`
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  background: white;
   position: fixed;
   left: 0;
   right: 0;
@@ -25,9 +26,10 @@ const Header = styled.header`
   align-items: center;
 `;
 const SLink = styled(Link)`
-  color: #333;
+  color: white;
   text-decoration: none;
   margin-right: 2rem;
+  font-size: 3rem;
   :hover {
     text-decoration: underline;
   }
