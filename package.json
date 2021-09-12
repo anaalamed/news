@@ -5,8 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server"
+    "start": "node server",
+    "dev": "nodemon server",
+    "db": "docker-compose --file ./mongo-compose.yaml up"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fetch-mock": "^9.11.0",
+    "mongoose": "^6.0.5",
+    "node-fetch": "^3.0.0",
+    "nodemon": "^2.0.12"
+  }
 }

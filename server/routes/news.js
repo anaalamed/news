@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import fetch from 'node-fetch';
+import Storage from '../models/storage.js';
 
 const routerNews = Router(); 
 
@@ -27,10 +28,11 @@ routerNews.get('/api/news/count', async (req, res) => {
             data_str+=article.description.concat(' ');
         })
 
-        // const data_str = 'aaa bbb cccc dddd aaa aa aa';
-
         const storage = count_words(data_str);
+        const st = await Storage.create(storage);
+        // res.json(st);
         res.json(storage);
+
     } catch (error) {
         console.log(error);
     }
@@ -59,10 +61,6 @@ const count_words = (words_str) => {
     };
 
     let countedWords =  getWordCount(words_arr);
-
-    // console.log(countedWords);
-
-    console.log(countedWords);
     return countedWords;
 }
 
