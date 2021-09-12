@@ -48,7 +48,7 @@ const news_slice = createSlice({
       state.news = action.payload.news;
     },
     [getStorage.fulfilled]: (state, action) => {
-      state.storage = action.payload.storage;
+      state.storage = action.payload.storage.storage;
     }
   }
 });

@@ -29,10 +29,9 @@ routerNews.get('/api/news/count', async (req, res) => {
         })
 
         const storage = count_words(data_str);
-        const st = await Storage.create(storage);
-        // res.json(st);
-        res.json(storage);
-
+        var st = new Storage({storage: storage});
+        st.save();
+        res.json(st);
     } catch (error) {
         console.log(error);
     }

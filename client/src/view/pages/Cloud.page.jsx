@@ -13,6 +13,7 @@ import { select } from "d3-selection";
 const Cloud = () => {
     const dispatch = useDispatch();
     const { storage } = useSelector(state => state.news);
+
     console.log(storage);
     let objKeys = Object.keys(storage);
     let objToArr = objKeys.map(key => {
