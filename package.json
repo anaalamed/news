@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",
     "dev": "nodemon server",
-    "db": "docker-compose --file ./mongo-compose.yaml up"
+    "db": "docker-compose --file ./mongo-compose.yaml up",
+    "build": "cd client/ && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
