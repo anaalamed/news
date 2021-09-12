@@ -2,16 +2,24 @@ import React from "react";
 import styled from "styled-components";
 
 const Article = ({ article }) => {
+  // console.log(article.urlToImage)
+
   return (
     <Main>
-      <Title>{article.title}</Title>
-      <Description>{article.description}</Description>
-      <Details>
+      <Data>
+        <Title>{article.title}</Title>
+        <Description>{article.description}</Description>
+        {/* <Details> */}
         <div>{article.author}</div>
         <div> {article.publishedAt?.substring(0, 10)} {article.publishedAt?.substring(11, 16)}</div>
-      </Details>
-      <Content>{article.content}</Content>
-      <a href={article.url} target="_blank" >Full article...</a>
+        {/* </Details> */}
+        <Content>{article.content}</Content>
+        <a href={article.url} target="_blank" >Full article...</a>
+      </Data>
+
+      {(article.urlToImage !== null) ?
+        (<div className="image"><img src={article.urlToImage}></img></div>) :
+        (null)}
     </Main>
   );
 };
@@ -22,7 +30,7 @@ const Main = styled.main`
   height: 100%;
   padding: 5rem 1rem;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   border: 1px solid midnightblue;
   margin: 1rem;
@@ -36,7 +44,18 @@ const Main = styled.main`
      color: whitesmoke;
      padding-top: 2rem;
      text-decoration: underline;
+     text-align: center;
    }
+
+   img {
+     width: 500px;
+   }
+`;
+
+const Data = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 `;
 
 const Title = styled.h1`
@@ -67,6 +86,6 @@ const Details = styled.div`
 
 const Content = styled.p`
   line-height: 2;
-  text-align: center;
+  /* text-align: center; */
   font-size: 1.9rem;
 `;

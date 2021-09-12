@@ -84,16 +84,16 @@ const Main = styled.main`
   align-items: center;
 
   div {
-  background-color: #9bdef3;
-  background-color: #9bdef3;
-  border-top-right-radius: 10rem;
-  border-bottom-right-radius: 15rem;
-  border-top-left-radius: 15rem;
-  border-bottom-left-radius: 10rem;
-  border: 10px solid yellow;
-  width: 80%;
-  height: 600px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    background-color: #9bdef3;
+    background-color: #9bdef3;
+    border-top-right-radius: 20rem;
+    border-bottom-right-radius: 40rem;
+    border-top-left-radius: 40rem;
+    border-bottom-left-radius: 20rem;
+    border: 0.3rem solid yellow;
+    width: 80%;
+    height: 600px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   }
 `;
 
