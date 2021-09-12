@@ -6,6 +6,8 @@ import colors from 'colors';
 import routerNews from './routes/news.js';
 import {connect} from './news-db.js'
 
+// import {dates} from './routes/functions.js';
+
 const app = express();
 app.use(bodyParser.json()); 
 app.use(cors()); // go from port to port 

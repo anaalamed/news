@@ -9,10 +9,10 @@ const Article = ({ article }) => {
       <Data>
         <Title>{article.title}</Title>
         <Description>{article.description}</Description>
-        {/* <Details> */}
-        <div>{article.author}</div>
-        <div> {article.publishedAt?.substring(0, 10)} {article.publishedAt?.substring(11, 16)}</div>
-        {/* </Details> */}
+        <Details>
+          <div>{article.author}</div>
+          <div> {article.publishedAt?.substring(0, 10)} {article.publishedAt?.substring(11, 16)}</div>
+        </Details>
         <Content>{article.content}</Content>
         <a href={article.url} target="_blank" >Full article...</a>
       </Data>
@@ -49,6 +49,7 @@ const Main = styled.main`
 
    img {
      width: 500px;
+     border-radius: 5rem;
    }
 `;
 
@@ -78,10 +79,13 @@ const Description = styled.p`
 const Details = styled.div`
   line-height: 2;
   font-size: 1.6rem;
-  display: flex;
-  justify-content: space-between;
+  /* display: flex; */
+  /* justify-content: space-between; */
   font-weight: bold;
-  width: 40%;
+  /* width: 40%; */
+  float: right;
+  margin: 0 auto;
+  text-align: center;
 `;
 
 const Content = styled.p`
