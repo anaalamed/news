@@ -9,29 +9,12 @@ export const getNews = createAsyncThunk(
 			},
 		});
     if (response.ok) {
-      const news = await response.json();
-      console.log(news);
-      return {news};
+      const obj = await response.json();
+      console.log(obj);
+      return {obj};
 		}
 	}
 );
-
-export const getStorage = createAsyncThunk(
-	'news/getStorage',
-	async (payload) => {
-		const response = await fetch('http://localhost:7000/api/news/count', {
-			headers: {
-				'Content-Type': 'application/json',
-			},
-		});
-    if (response.ok) {
-      const storage = await response.json();
-      console.log(storage);
-      return {storage};
-		}
-	}
-);
-
 
 const news_slice = createSlice({
   name: "news",
@@ -45,10 +28,8 @@ const news_slice = createSlice({
   extraReducers: {
     // --------------- other Async -----------------------
     [getNews.fulfilled]: (state, action) => {
-      state.news = action.payload.news;
-    },
-    [getStorage.fulfilled]: (state, action) => {
-      state.storage = action.payload.storage.storage;
+      state.news = action.payload.obj.news;
+      state.storage = action.payload.obj.storage.storage;
     }
   }
 });

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { getStorage } from '../../state/slices/news.slice';
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+
 import { TagCloud } from 'react-tagcloud' // value count
 
 import ReactWordcloud from 'react-wordcloud'; // text value
@@ -11,7 +11,6 @@ import { select } from "d3-selection";
 
 
 const Cloud = () => {
-    const dispatch = useDispatch();
     const { storage } = useSelector(state => state.news);
 
     console.log(storage);
@@ -53,7 +52,7 @@ const Cloud = () => {
             <Title>ABC News World Cloud</Title>
 
             {(storage.length === 0) ?
-                (<Button onClick={() => dispatch(getStorage())}>Load</Button>) :
+                (<h1>Loading...</h1>) :
                 (
                     <div>
                         <ReactWordcloud words={objToArr}
