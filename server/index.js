@@ -17,7 +17,7 @@ app.use(routerNews);
 
 const uri = "mongodb+srv://a:i47iFPwAZVfrHiOf@cluster0.wld4w.mongodb.net/news?retryWrites=true&w=majority";
 // const uri = "mongodb+srv://someone:d4lhr2l25iYIWFyH@cluster0.wld4w.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-// connect(process.env.MONGODB_URI || uri );
+connect(process.env.MONGODB_URI || uri );
 // connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/news');
 
 
