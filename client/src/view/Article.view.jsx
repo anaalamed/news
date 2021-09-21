@@ -66,6 +66,7 @@ const Title = styled.h1`
   text-align: center;
   color: midnightblue;
   font-weight: bold;
+  padding: 1rem 2rem;
 `;
 
 const Description = styled.p`

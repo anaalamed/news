@@ -3,7 +3,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const getNews = createAsyncThunk(
 	'news/getNews',
 	async (payload) => {
-		const response = await fetch('http://localhost:7000/api/news', {
+		const response = await fetch('https://anaalamed-abc-news.herokuapp.com/api/news', {
+		// const response = await fetch('http://localhost:7000/api/news', {
 			headers: {
 				'Content-Type': 'application/json',
 			},

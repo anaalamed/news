@@ -24,7 +24,9 @@ const Header = styled.header`
   padding: 2rem;
   display: flex;
   align-items: center;
+  background-color: #0a2136;
 `;
+
 const SLink = styled(Link)`
   color: white;
   text-decoration: none;
